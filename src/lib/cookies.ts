@@ -31,9 +31,14 @@ export function getDecryptedCookie(
   name: string,
   destination = "cookies"
 ): string | null {
+  // const encryptedValue =
+  //   destination === "cookies" ? Cookies.get(name) : localStorage.getItem(name);
   const encryptedValue =
-    destination === "cookies" ? Cookies.get(name) : localStorage.getItem(name);
-
+      destination === "cookies"
+          ? Cookies.get(name)
+          : typeof window !== "undefined"
+              ? localStorage.getItem(name)
+              : null;
   if (!encryptedValue) return "";
 
   try {
