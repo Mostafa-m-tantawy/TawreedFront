@@ -1,7 +1,7 @@
 import axios, { AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import { useAuthStore } from "@/store/authStore";
 
-const apiUrl = "http://tawreedbackend.test/api/"; // process.env.NEXT_PUBLIC_API_URL
+const apiUrl = "http://tawreed.test/api/"; // process.env.NEXT_PUBLIC_API_URL
 
 const api = axios.create({
   baseURL: apiUrl,
